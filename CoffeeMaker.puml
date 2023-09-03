@@ -1,0 +1,30 @@
+@startuml
+class app.drinks.Latte {
++ String prepare()
+}
+class app.drinks.Espresso {
++ String prepare()
+}
+class app.Main {
++ {static} void main(String[])
+}
+interface app.drinks.Drink {
++ String prepare()
+}
+class app.CoffeeMachine.CoffeeMachine {
++ void getMenu()
+}
+class app.drinks.Drinks {
+- Drink drink
++ void setDrink(Drink)
++ void startDrink()
+}
+class app.drinks.Cappuccino {
++ String prepare()
+}
+
+
+app.drinks.Drink <|.. app.drinks.Latte
+app.drinks.Drink <|.. app.drinks.Espresso
+app.drinks.Drink <|.. app.drinks.Cappuccino
+@enduml
